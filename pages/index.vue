@@ -1,23 +1,30 @@
 <template>
   <User />
-  <button @click="fetchData" class="p-2 border rounded-lg text-blue uppercase font-bold">fetch data</button>
+  <button @click="fetchData" class="text-blue rounded-lg border p-2 font-bold uppercase">
+    fetch data
+  </button>
 
   <!-- <p v-for="item of data" 
    :key="item.title">{{ item.title }}</p> -->
 
-   <p>{{ data }}</p>
+  <p>{{ data }}</p>
 
   <NuxtLink :to="'/contact'"> Contact page </NuxtLink>
 </template>
 
 <script setup lang="ts">
-const { user } = initData();
+const { user } = initData()
 
-const { data } = await useFetch('https://api.api-ninjas.com/v1/planets?name=Neptune',{
+const { data } = await useFetch('https://api.api-ninjas.com/v1/planets?name=Neptune', {
   headers: {
     'X-Api-Key': '9pu3SsGq7eU2s6ZkoO3Dxw==FHiXgJOqvqSYQ4LW'
   }
 })
+
+console.log(data)
+
+const { data: data2 } = await useFetch('/api/items')
+console.log(data2.value)
 
 const fetchData = async () => {
   const res = await $fetch('/api/posts')
