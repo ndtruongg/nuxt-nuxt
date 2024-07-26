@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-const { user } = initData();
+const { user } = initData()
 </script>
 
 <style scoped></style>

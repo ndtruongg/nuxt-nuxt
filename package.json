@@ -10,9 +10,13 @@
     "postinstall": "nuxt prepare",
     "prepare": "husky install",
     "commitlint": "commitlint --edit",
-    "validate:branch": "sh scripts/validate_branch.sh"
+    "validate:branch": "sh scripts/validate_branch.sh",
+    "format": "prettier --write ./",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "js-cookie": "^3.0.5",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },
@@ -20,9 +24,16 @@
     "@antfu/eslint-config": "^2.23.2",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@types/js-cookie": "^3.0.6",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
     "@unocss/nuxt": "^0.61.5",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^9.7.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.27.0",
     "husky": "^9.1.1",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5"
