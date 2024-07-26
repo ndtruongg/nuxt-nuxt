@@ -1,5 +1,12 @@
 <template>
-  <User />
+  <NuxtLink :to="'/contact'">
+    <NuxtImg
+      :style="{ 'view-transition-name': `item-${111}` }"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/800px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg"
+      class="h-[300px] w-[250px]"
+    />
+  </NuxtLink>
+
   <button @click="fetchData" class="text-blue rounded-lg border p-2 font-bold uppercase">
     fetch data
   </button>
@@ -17,8 +24,6 @@
       {{ post.body }}
     </p>
   </a>
-
-  <NuxtLink :to="'/contact'"> Contact page </NuxtLink>
 </template>
 
 <script setup lang="ts">

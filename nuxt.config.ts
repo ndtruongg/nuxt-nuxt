@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: process.env.ENV_MODE === 'development' },
-  modules: ['@unocss/nuxt'],
+  modules: ['@unocss/nuxt', '@nuxt/image'],
+  experimental: {
+    viewTransition: true
+  },
   vite: {
     css: {
       preprocessorOptions: {
