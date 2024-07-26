@@ -16,6 +16,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/image": "^1.7.0",
     "js-cookie": "^3.0.5",
     "nuxt": "^3.12.4",
     "vue": "latest"
