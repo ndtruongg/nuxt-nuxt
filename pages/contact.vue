@@ -1,6 +1,12 @@
 <template>
   <div v-for="item of 10" :key="item" :style="{ marginBottom: '10px', marginTop: '20px' }">
-    constact page
+    contact page
+  </div>
+  <div>
+    <ul>
+      <div>Item 1</div>
+      <li>Item 2</li>
+    </ul>
   </div>
   <NuxtLink :to="'/'">
     <NuxtImg
