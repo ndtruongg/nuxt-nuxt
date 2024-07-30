@@ -1,6 +1,6 @@
 <template>
   <NuxtLoadingIndicator />
-  <div id="app-scroller" class="px-10">
+  <div id="app-scroller">
     <NuxtPage />
   </div>
 </template>
