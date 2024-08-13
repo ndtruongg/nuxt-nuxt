@@ -1,14 +1,23 @@
 import Cookies from 'js-cookie'
 
-export default function <T>(url: string, options: any = {}) {
+export default async function <T>(url: string, options: any = {}) {
   const accessToken = Cookies.get('ACCESS_TOKEN') || ''
   const config = useRuntimeConfig()
+
+  const headers = {
+    ...options.headers,
+    ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {})
+  }
+
   const api = $fetch.create({
-    baseURL: config.public.apiBaseUrl,
-    headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+    baseURL: options.baseURL || config.public.apiBaseUrl,
+    headers,
+    ...options
   })
 
   return api<T>(url, options)
+    .then((response) => response)
+    .catch((error) => {
+      throw error
+    })
 }
