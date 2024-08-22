@@ -1,7 +1,6 @@
-import Cookies from 'js-cookie'
-
+// NOTE: Only use for Client-side interactions
 export default async function <T>(url: string, options: any = {}) {
-  const accessToken = Cookies.get('ACCESS_TOKEN') || ''
+  const accessToken = useCookie('ACCESS_TOKEN') || ''
   const config = useRuntimeConfig()
 
   const headers = {
@@ -10,7 +9,7 @@ export default async function <T>(url: string, options: any = {}) {
   }
 
   const api = $fetch.create({
-    baseURL: options.baseURL || config.public.apiBaseUrl,
+    // baseURL: options.baseURL || config.public.apiBaseUrl,
     headers,
     ...options
   })

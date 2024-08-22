@@ -12,6 +12,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  path: '/lien-he'
+})
+
 const fetchData = async () => {
   const res = await api('/comments')
   console.log(res)

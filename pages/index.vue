@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-const { data, status } = await useFetch('/api/todos', { server: true })
+const { data, status } = await useAsyncData('/api/todos', () => $fetch('/api/todos'))
 
-console.log(status.value)
+// const { data: data2 } = await useFetch('/api/comments')
 </script>
 
 <style scoped></style>
